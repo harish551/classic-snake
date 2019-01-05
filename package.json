@@ -1,0 +1,24 @@
+{
+  "name": "classic-snake",
+  "version": "1.0.0",
+  "description": "A Simple classic snake game ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harish551/classic-snake.git"
+  },
+  "author": "harish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harish551/classic-snake/issues"
+  },
+  "homepage": "https://github.com/harish551/classic-snake#readme",
+  "dependencies": {
+    "mongoose": "^5.4.2",
+    "path": "^0.12.7",
+    "request": "^2.88.0"
+  }
+}
