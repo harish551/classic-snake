@@ -61,3 +61,5 @@ app.get('/gamestats',function(req,res){
 
 
 app.listen(8000);
+
+require("openurl").open("http://localhost:8000/")

@@ -4,12 +4,15 @@
 	<meta charset="utf-8">
 	<title>Snake Game</title>
 </head>
-<body style = "background-color: aqua;overflow-x:hidden">
+<body style = "background-color: aqua;overflow:hidden">
 	<div><center>
-	<h1 style = "color: blue;">Classic-SnakeGame</h1>
-    <div style="width: 600px; float: left;"><label id = instruction > press arrow key to start....</label> <canvas id="snakecanvas" width="1000" height="500"></canvas><br/>
-	    <button style ="position: relative;left: 300px; " onclick="location.reload();">Restart game</button> </div>
+	<h2 style = "color: blue;">Classic-SnakeGame</h2>
+    <div style="width:600px;float: left;"> 
+<label id = instruction > press arrow key to start....</label>
+<canvas style = "border:10px solid grey;" id="snakecanvas" width="1000" height="500"></canvas><br/>
+ </div>
     <div style = "position : relative;left : 200px; ">
+		<button style ="position: relative;left:50px; " onclick="location.reload();">Restart game</button>
 	 	<h1>score</h1>
 	 	<h1 style = "font-size: 100px;" id = "score">0</h1>  
 	</div>

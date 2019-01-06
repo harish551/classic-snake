@@ -18,6 +18,7 @@
   "homepage": "https://github.com/harish551/classic-snake#readme",
   "dependencies": {
     "mongoose": "^5.4.2",
+    "openurl": "^1.1.1",
     "path": "^0.12.7",
     "request": "^2.88.0"
   }
