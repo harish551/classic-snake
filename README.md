@@ -40,5 +40,5 @@ to install node
 
 Game Play
 
-![playing](../master/gameplay1.png)
-![game stats](../master/gameplay2.png)
+![playing](../master/gameplay2.png)
+![game stats](../master/gameplay1.png)
