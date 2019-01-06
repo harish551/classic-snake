@@ -3,7 +3,7 @@ const cvs = document.getElementById("snakecanvas");
 const context = cvs.getContext("2d");
 
 const box = 20;
-const w = 800;
+const w = 1000;
 const h = 500;
 
 let snake = [];
@@ -172,5 +172,5 @@ function togglePause()
 
 let name;
 function displayScore(){
-	document.getElementById('score').innerHTML = 'score: ' + score;
+	document.getElementById('score').innerHTML =  score;
 }
