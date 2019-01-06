@@ -40,7 +40,5 @@ to install node
 
 Game Play
 
-/home/harish/Pictures/Screenshot from 2019-01-06 15-52-15.png
-
-
-/home/harish/Pictures/Screenshot from 2019-01-06 15-51-21.png
+![playing](../master/gameplay1.png)
+![game stats](../master/gameplay2.png)
