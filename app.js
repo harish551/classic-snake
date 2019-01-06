@@ -1,47 +1,53 @@
+//importing modules
+
 let request = require('request');
 let path = require('path');
 let express = require('express');
 let app = express();
 let mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017/snake-game');
 
-let htmlPath = path.join(__dirname);
-app.use(express.static(htmlPath));
+mongoose.connect('mongodb://localhost:27017/snake-game'); //connecting to the database
+
+let htmlPath = path.join(__dirname); // setting path for project
+
+app.use(express.static(htmlPath)); // using middilewere 
 
 let playerSchema = new mongoose.Schema({
 
-    name  : String,
-    score : Number
+  name: String, // database schema
+  score: Number
 });
 
-let Player = mongoose.model("Player", playerSchema);
-let data,db,scores,topfive,str;
+let Player = mongoose.model('Player', playerSchema); //modeling database
 
-app.get('/',function(req,res){
-	res.sendFile(__dirname + '/index.html');
+let data, db, scores, topfive, str;
+
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/index.html');
 
 });
 
-app.use("/gameover/:name/:score", (req, res) => {
+app.use('/gameover/:name/:score', (req, res) => {
   req.params.score = +req.params.score;
   let playerRecord = new Player(req.params);
   data = req.params;
   playerRecord.save()
     .then(item => {
-      console.log("score saved to database"+ req.params);
+      console.log('score saved to database' + req.params);
     })
     .catch(err => {
       console.log(err);
     });
 
-    res.redirect('http://localhost:8000/gamestats');
+  res.redirect('http://localhost:8000/gamestats');
 });
-app.get('/gamestats',function(req,res){
-	Player.find( function(err,db){
-	scores = db.map((a) => a.score);
-	topfive = db.sort((a,b) => b.score - a.score).slice(0,5);
-	str = topfive.map((obj) => obj.name + ' : ' + obj.score).join('<br/>');	
-	res.send(`<body style = "background : Teal;">
+
+app.get('/gamestats', function(req, res) {
+  Player.find(function(err, db) {
+    scores = db.map((a) => a.score);
+    topfive = db.sort((a, b) => b.score - a.score).slice(0, 5);
+    str = topfive.map((obj) => obj.name + ' : ' + obj.score).join('<br/>');
+    res.send(`<body style = "background : Teal;">
 		<center>
 		<h1 style = "font-size: 100px ">Game Over</h1>
 		<h1> Your Score: ${data.score}</h1>
@@ -55,11 +61,8 @@ app.get('/gamestats',function(req,res){
 		</body>
 		`);
 
-	});
+  });
 });
 
-
-
 app.listen(8000);
-
-require("openurl").open("http://localhost:8000/")
+require('openurl').open('http://localhost:8000/')
