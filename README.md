@@ -42,3 +42,12 @@ Game Play
 
 ![playing](../master/gameplay2.png)
 ![game stats](../master/gameplay1.png)
+
+
+References :
+
+	https://codeburst.io/hitchhikers-guide-to-back-end-development-with-examples-3f97c70e0073
+
+	https://medium.freecodecamp.org/javascript-functions-af6f9186a553
+
+	https://medium.freecodecamp.org/think-like-a-programmer-how-to-build-snake-using-only-javascript-html-and-css-7b1479c3339e
