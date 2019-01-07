@@ -30,8 +30,10 @@ let direction;
 document.addEventListener("keydown", findDirection);
 
 function findDirection(event) {
-  document.getElementById('instruction').innerHTML = 'press p to pause';
+  
   let key = event.keyCode;
+  if(key == 37 || key == 38 || key == 39 || key == 40) 
+  	document.getElementById('instruction').innerHTML = 'press p to pause';
 
   if (key == 37 && direction != "RIGHT") {
     direction = "LEFT";
