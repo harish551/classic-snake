@@ -29,6 +29,7 @@ app.get('/', function(req, res) {
 
 app.use('/gameover/:name/:score', (req, res) => {
   req.params.score = +req.params.score;
+
   let playerRecord = new Player(req.params);
   data = req.params;
   playerRecord.save()
