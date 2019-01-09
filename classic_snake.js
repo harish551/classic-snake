@@ -5,6 +5,13 @@ const box = 20;
 const w = 1000;
 const h = 500;
 
+// sounds
+let dead = new Audio();
+let eat = new Audio();
+
+dead.src = '/sounds/dead.mp3';
+eat.src = '/sounds/eat.mp3';
+
 let snake = [];
 
 // intialize snake
@@ -37,16 +44,19 @@ function findDirection(event) {
 
   if (key == 37 && direction != "RIGHT") {
     direction = "LEFT";
+    delay();
   } else if (key == 38 && direction != "DOWN") {
     direction = "UP";
-
+    delay();
   } else if (key == 39 && direction != "LEFT") {
     direction = "RIGHT";
-
+    delay();
   } else if (key == 40 && direction != "UP") {
     direction = "DOWN";
+    delay();
   } else if (key == 80) {
     togglePause();
+    delay();
   }
 }
 
@@ -101,6 +111,7 @@ function draw() {
   // if the snake eats the food
   if (snakeX == food.x && snakeY == food.y) {
     score++;
+    eat.play();
     food = {
       x: Math.floor(Math.random() * (w / box)) * box,
       y: Math.floor(Math.random() * (h / box)) * box
@@ -121,7 +132,7 @@ function draw() {
   }
 
   //adding new head for snake
-
+  delay();
   let newHead = {
     x: snakeX,
     y: snakeY
@@ -130,6 +141,7 @@ function draw() {
   // checking game over condition
 
   if (snakeX < 0 || snakeX == w || snakeY < 0 || snakeY == h || collision(newHead, snake)) {
+ 	dead.play();
     clearInterval(game);
     alert(` Oops: Game Over \n Your Score: ${score}`);
     name = prompt('Enter Your Name ');
@@ -166,4 +178,9 @@ let name;
 
 function displayScore() {
   document.getElementById('score').innerHTML = score;
+}
+
+function delay(){
+	for(let i = 0;i<200;i++)
+	for(let j = 0;j<1000;j++);	
 }
