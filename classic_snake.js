@@ -146,7 +146,7 @@ function draw() {
     alert(` Oops: Game Over \n Your Score: ${score}`);
     name = prompt('Enter Your Name ');
     if (name == '') name = 'anonymous'
-    window.location = `http://localhost:8000/gameover/${name}/${score}`;
+    window.location = `${window.location.protocol}gameover/${name}/${score}`;
 
   }
 
