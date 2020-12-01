@@ -4,7 +4,8 @@
   "description": "A Simple classic snake game ",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,7 @@
   "homepage": "https://github.com/harish551/classic-snake#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "mongoose": "^5.4.2",
+    "mongoose": "^5.10.17",
     "openurl": "^1.1.1",
     "path": "^0.12.7",
     "request": "^2.88.0"
